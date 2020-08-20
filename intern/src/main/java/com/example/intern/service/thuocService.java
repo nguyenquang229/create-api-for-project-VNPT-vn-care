@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class tinhService extends RuntimeException{
+public class thuocService extends RuntimeException {
     private String resourceName;
     private String fieldName;
     private Object fieldValue;
     
-    public tinhService(String resourceName,String filedName,Object fieldValue)
+    public thuocService(String resourceName,String filedName,Object fieldValue)
     {
         super(String.format("%s not found with %s,%s",resourceName,filedName,fieldValue));
         this.fieldName = filedName;
@@ -34,5 +34,6 @@ public class tinhService extends RuntimeException{
     public Object getFieldValue() {
         return fieldValue;
     }
+    
     
 }

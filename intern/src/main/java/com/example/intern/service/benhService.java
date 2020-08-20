@@ -5,17 +5,18 @@
  */
 package com.example.intern.service;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class tinhService extends RuntimeException{
+public class benhService extends RuntimeException {
     private String resourceName;
     private String fieldName;
     private Object fieldValue;
     
-    public tinhService(String resourceName,String filedName,Object fieldValue)
+    public benhService(String resourceName,String filedName,Object fieldValue)
     {
         super(String.format("%s not found with %s,%s",resourceName,filedName,fieldValue));
         this.fieldName = filedName;

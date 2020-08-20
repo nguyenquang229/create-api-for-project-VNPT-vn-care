@@ -9,18 +9,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
+
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class tinhService extends RuntimeException{
-    private String resourceName;
+public class bacsiService extends RuntimeException{
+     private String resourceName;
     private String fieldName;
     private Object fieldValue;
     
-    public tinhService(String resourceName,String filedName,Object fieldValue)
+    public bacsiService(String resourceName,String fieldName,Object fieldValue )
     {
-        super(String.format("%s not found with %s,%s",resourceName,filedName,fieldValue));
-        this.fieldName = filedName;
+        super(String.format("%s not found %s,%s",resourceName,fieldName,fieldValue));
+        this.fieldName = fieldName;
+        this.fieldValue = fieldValue;
         this.resourceName = resourceName;
-        this.fieldValue = this.fieldValue;
     }
 
     public String getResourceName() {
